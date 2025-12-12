@@ -18,7 +18,11 @@ public class GamePanel extends JPanel implements Runnable {
 	final int maxScreenRow = 12;
 	final int screenWidth = tileSize * maxScreenCol;
 	final int screenHeight = tileSize * maxScreenRow;
+	
+	//FPS
+	int FPS = 60;
 
+	//keyHandler
 	KeyHandler keyH = new KeyHandler();
 	Thread gameThread;
 	
@@ -44,14 +48,36 @@ public class GamePanel extends JPanel implements Runnable {
 	@Override
 	public void run() {
 		
+		//initialize our 'Sleep Method' draw interval
+		double drawInterval = 1000000000/FPS; //draw the screen every this time
+		double drawTime = System.nanoTime() + drawInterval; //Everytime we hit the interval we draw another screen
+		
 		while(gameThread != null) {
 			
 			//Updates the program every 60 seconds
 			update();
 			
 			
-			//Updates the screen with draw
+			//Updates the screen with draw.
 			repaint();
+			
+
+			//Sleep Method: Thread sleeps for the remaining time the screen is not updating
+			try {
+				double remainingTime = drawTime - System.nanoTime(); //Finds the time after the drawTime reset and uses this to sleep
+				remainingTime = remainingTime/ 1000000; //Convert to Milliseconds
+				
+				if (remainingTime < 0) {
+					remainingTime = 0;
+				}
+				Thread.sleep((long) remainingTime);
+				
+				drawTime += drawInterval;
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}		
 	}
 		
@@ -69,6 +95,7 @@ public class GamePanel extends JPanel implements Runnable {
 		}
 		if (keyH.rP == true) {
 			playerX += playerSpeed;
+			
 		}
 	}
 	
