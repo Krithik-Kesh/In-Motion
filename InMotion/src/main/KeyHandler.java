@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener{
 
-	boolean uP, dP, lP, rP;
+	public boolean uP, dP, lP, rP;
 	
 	@Override
 	public void keyTyped(KeyEvent e) {
