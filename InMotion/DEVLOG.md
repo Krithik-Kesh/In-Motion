@@ -3,3 +3,6 @@ I completed the basic render screen but I need to figure out how to shape the ga
 
 ##Dec 12 2025
 Im currently working on the key input response but it doesn't seem to be working. Will keep trying, it seems the game loop isn't updating. So I will look into that. Moreover, we have created icon sprite models via gemini AI, these will be modified and implemented into the game. Just fixed the bug, needed to add startGameThread to the main, it wasnt running the loop.
+
+##Dec 30 2025
+Implemented the main character, currently its just a temporary one but Im going to replace it with the real character.
