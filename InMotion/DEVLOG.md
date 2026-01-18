@@ -8,4 +8,4 @@ Im currently working on the key input response but it doesn't seem to be working
 Implemented the main character, currently its just a temporary one but Im going to replace it with the real character.
 
 ##Jan1st 2026
-So now I have completely finishd the spirte animation. the spreite animation as of now is extremely simple. The game loop runs 60 times, thus the update() runs 60 times. The reason we want this to run 60 times is because it fits into the 
+So now I have completely finished the sprite animation. the sprite animation as of now is extremely simple. The game loop runs 60 times, thus the update() runs 60 times. The reason we want this to run 60 times is because it fits into the 
