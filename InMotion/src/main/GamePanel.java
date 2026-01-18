@@ -54,11 +54,9 @@ public class GamePanel extends JPanel implements Runnable {
 			//Updates the program every 60 seconds
 			update();
 			
-			
 			//Updates the screen with draw
 			repaint();
 			
-
 			//Sleep Method: Thread sleeps for the remaining time the screen is not updating
 			try {
 				double remainingTime = drawTime - System.nanoTime(); //Finds the time after the drawTime reset and uses this to sleep
